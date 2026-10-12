@@ -1,0 +1,12 @@
+const plans=[['Basic','₹1,999'],['Standard','₹4,999'],['Premium','₹11,999'],['All In One','₹14,999'],['Trademark Registration & Objection','₹3,999'],['TMR & ISO Certificate','₹5,999']];
+document.querySelector('#mini-plans').innerHTML=plans.map(([name,price],i)=>`<label class="mini-plan"><span><input type="radio" name="chosen-plan" value="${name}" ${i===0?'checked':''}> ${name}</span><strong>${price}</strong></label>`).join('');
+const first=document.querySelector('#form-step-one'),second=document.querySelector('#form-step-two'),success=document.querySelector('#form-success');
+document.querySelector('#lead-form').addEventListener('submit',e=>{e.preventDefault();first.hidden=true;second.hidden=false;success.hidden=true;document.querySelector('#contact').scrollIntoView({behavior:'smooth'})});
+document.querySelector('#form-back').addEventListener('click',()=>{second.hidden=true;first.hidden=false});
+document.querySelector('#form-finish').addEventListener('click',()=>{second.hidden=true;success.hidden=false});
+document.querySelector('#start-over').addEventListener('click',()=>{document.querySelector('#lead-form').reset();success.hidden=true;first.hidden=false});
+document.querySelectorAll('.plan-button').forEach(button=>button.addEventListener('click',()=>{const plan=button.dataset.plan;const radio=[...document.querySelectorAll('[name="chosen-plan"]')].find(input=>input.value===plan);if(radio)radio.checked=true;document.querySelector('#contact').scrollIntoView({behavior:'smooth'});document.querySelector('[name="name"]').focus({preventScroll:true})}));
+document.querySelector('#search-form').addEventListener('submit',e=>{e.preventDefault();const brand=document.querySelector('#brand-search').value.trim();document.querySelector('#search-message').textContent=`“${brand}” is ready for an expert trademark search. Fill out the assistance form to continue.`});
+document.querySelector('.back-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const updateFloating=()=>document.querySelectorAll('.floating-call,.back-top').forEach(button=>button.classList.toggle('visible',window.scrollY>350));
+window.addEventListener('scroll',updateFloating,{passive:true});updateFloating();

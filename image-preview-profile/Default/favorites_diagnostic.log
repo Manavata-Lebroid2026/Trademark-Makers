@@ -1,0 +1,11 @@
+2026-09-24 05:32:44.915: [INFO] CurrentProfilePath: C:\Trademark-registration\image-preview-profile\Default
+2026-09-24 05:32:44.915: [INFO] Profiles total count: 1
+2026-09-24 05:32:44.915: [INFO] Profile: name=Profile 1 path=C:\Trademark-registration\image-preview-profile\Default lastActive=2026-09-24T05:32:44.895Z
+2026-09-24 05:32:44.915: [INFO] LastUsedProfileDir: C:\Trademark-registration\image-preview-profile\Default
+2026-09-24 05:32:44.915: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Trademark-registration\image-preview-profile\Default lastActive=2026-09-24T05:32:44.895Z
+2026-09-24 05:32:44.916: [INFO] OnDoneLoading sync enabled: 0
+2026-09-24 05:32:44.916: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-24 05:32:44.916: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-24 05:32:44.916: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-24 05:32:45.382: [INFO] VisibilityChanged: 0
+2026-09-24 05:33:01.845: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
