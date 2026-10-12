@@ -670,11 +670,14 @@ p {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 650px;
+    margin-inline: auto;
     gap: 18px
 }
 
 .price-card {
+    text-align: center;
     background: #fff;
     border: 1px solid #e5e5e5;
     position: relative;
@@ -725,14 +728,13 @@ p {
 
 .price-card li {
     position: relative;
-    padding: 6px 0 6px 20px;
+    padding: 6px 0;
     border-bottom: 1px solid #f2f2f2
 }
 
 .price-card li:before {
     content: '✓';
-    position: absolute;
-    left: 0;
+    margin-right: 6px;
     color: var(--green);
     font-weight: 800
 }
