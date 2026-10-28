@@ -190,11 +190,13 @@ footer { background:#13232e; }
 
 /* A single clickable price beside the hero content. */
  .hero-price-highlight { display:flex; align-items:center; gap:28px; width:fit-content; max-width:100%; margin:0 0 28px; color:#fff; border-radius:4px; }
-.hero-price-label { display:block; color:#ffb17b; font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
-.hero-price-amount { position:relative; display:inline-block; margin:2px 0 12px; font-family:Georgia,'Times New Roman',serif; font-size:64px; font-weight:400; line-height:1.1; letter-spacing:-.055em; color:#ffac72; }
+.hero-price-main { flex-shrink:0; position:relative; isolation:isolate; }
+.hero-price-main:before { content:''; position:absolute; inset:-22px -35px; background:radial-gradient(ellipse,#fa76281c,transparent 70%); z-index:-1; pointer-events:none; }
+.hero-price-label { display:block; color:#ffd2ad; font-size:12px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+.hero-price-amount { position:relative; display:inline-block; margin:4px 0 12px; font-family:'Plus Jakarta Sans',Arial,sans-serif; font-size:clamp(80px,6.5vw,100px); font-weight:800; line-height:1.1; letter-spacing:-.065em; color:#ff984f; text-shadow:0 4px 30px #fa762830; }
 .hero-price-amount>span { font-size:.6em; vertical-align:top; display:inline-block; margin-top:.18em; margin-right:6px; }
-.hero-price-amount svg { position:absolute; bottom:-8px; left:0; width:100%; height:14px; overflow:visible; fill:none; stroke:#fa7628; stroke-width:2; stroke-linecap:round; }
-.hero-price-caption { display:block; font-size:14px; font-weight:500; }
+.hero-price-amount svg { position:absolute; bottom:-8px; left:0; width:100%; height:14px; overflow:visible; fill:none; stroke:#ff984f; stroke-width:3; stroke-linecap:round; }
+.hero-price-caption { display:block; color:#ffbd8d; font-size:16px; font-weight:800; }
 .hero-price-highlight small { display:block; margin-top:5px; font-size:10px; color:#c0cbd1; }
 .whatsapp-chat { position:fixed; right:24px; bottom:92px; z-index:100; display:grid; place-items:center; width:54px; height:54px; padding:13px; border-radius:50%; background:#168b4b; color:#fff; box-shadow:0 5px 18px #0003; border:2px solid #fff; }
 .whatsapp-chat svg { width:100%; height:100%; }
@@ -202,10 +204,10 @@ footer { background:#13232e; }
 .whatsapp-chat:focus-visible { outline:3px solid #fa7628; outline-offset:4px; }
 @media(max-width:550px) {
   .hero-visual { height:380px; }
-  .hero-price-highlight { gap:18px; margin-bottom:24px; }
-  .hero-price-amount { font-size:56px; margin-bottom:12px; }
-  .hero-price-label { font-size:10px; }
-  .hero-price-caption { font-size:12px; }
+  .hero-price-highlight { flex-wrap:wrap; gap:16px; margin-bottom:24px; }
+  .hero-price-amount { font-size:76px; margin-bottom:12px; }
+  .hero-price-label { font-size:11px; }
+  .hero-price-caption { font-size:14px; }
   .hero-price-highlight small { font-size:9px; }
   .whatsapp-chat { right:18px; bottom:88px; width:52px; height:52px; }
 }.hero-price-highlight:hover .hero-price-amount { color:#ffc49a; }
@@ -214,3 +216,27 @@ footer { background:#13232e; }
 .hero-price-caption>span { display:inline-block; margin-left:8px; color:#ffac72; }
 #contact { scroll-margin-top:110px; }
 @media(max-width:550px) { .hero-price-details { padding-left:16px; } }
+
+/* Draw attention to the price on arrival, then let it settle. */
+.hero-price-highlight { animation:price-arrive .65s ease-out both; }
+.hero-price-amount { color:#ffffff; text-shadow:0 0 24px #ffffff30; animation:price-glow 2.8s ease-in-out .65s 3; }
+.hero-price-amount svg { stroke:#ffffff; }
+.hero-price-amount svg path { stroke-dasharray:260; stroke-dashoffset:0; animation:price-underline .9s ease-out .35s both; }
+.hero-price-main:before { background:radial-gradient(ellipse,#ffffff26,transparent 70%); }
+.hero-price-highlight:hover .hero-price-amount { color:#ffffff; }
+.hero-price-highlight:focus-visible { outline-color:#ffffff; }
+@keyframes price-arrive {
+  from { opacity:0; transform:translateY(10px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes price-glow {
+  0%,100% { text-shadow:0 0 24px #ffffff30; }
+  50% { text-shadow:0 0 20px #ffffff80,0 0 44px #ffffff40; }
+}
+@keyframes price-underline {
+  from { stroke-dashoffset:260; }
+  to { stroke-dashoffset:0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-price-highlight,.hero-price-amount,.hero-price-amount svg path { animation:none; }
+}
