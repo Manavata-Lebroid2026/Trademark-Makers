@@ -121,7 +121,7 @@ footer { background:#13232e; }
 .floating-call,.back-top { width:52px; height:52px; }
 .back-top { border-radius:14px; }
 
-@media(max-width:1200px) {
+@media(max-0px) {
   .header-inner { flex-wrap:nowrap; }
   .main-nav { width:auto; }
   .brand img { width:175px; }
