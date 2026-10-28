@@ -202,6 +202,9 @@ footer { background:#13232e; }
 .whatsapp-chat svg { width:100%; height:100%; }
 .whatsapp-chat:hover { background:#10773e; }
 .whatsapp-chat:focus-visible { outline:3px solid #fa7628; outline-offset:4px; }
+.floating-call { left:auto; right:24px; bottom:160px; width:54px; height:54px; z-index:100; background:#ef671e; border:2px solid #fff; opacity:1; pointer-events:auto; }
+.floating-call:hover { background:#d95512; }
+.floating-call:focus-visible { outline:3px solid #fa7628; outline-offset:4px; }
 @media(max-width:550px) {
   .hero-visual { height:380px; }
   .hero-price-highlight { flex-wrap:wrap; gap:16px; margin-bottom:24px; }
@@ -210,6 +213,7 @@ footer { background:#13232e; }
   .hero-price-caption { font-size:14px; }
   .hero-price-highlight small { font-size:9px; }
   .whatsapp-chat { right:18px; bottom:88px; width:52px; height:52px; }
+  .floating-call { right:18px; bottom:152px; width:52px; height:52px; }
 }.hero-price-highlight:hover .hero-price-amount { color:#ffc49a; }
 .hero-price-highlight:focus-visible { outline:2px solid #ffac72; outline-offset:8px; }
 .hero-price-details { border-left:1px solid #ffffff30; padding-left:22px; }
