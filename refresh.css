@@ -9,6 +9,8 @@ h1,h2,h3 { font-family:'Plus Jakarta Sans',Arial,sans-serif; letter-spacing:-.03
 /* Header */
 .topbar { background:#14232d; border:0; font-size:12px; letter-spacing:.01em; }
 .topbar-inner { min-height:34px; }
+.top-contact { width:100%; flex-wrap:wrap; }
+.top-contact>a[href^="tel:"] { margin-left:auto; }
 .iso-badge { width:24px; height:24px; font-size:8px; opacity:.85; }
 .topbar a { font-weight:600; opacity:.85; }
 .topbar a:hover { opacity:1; color:#ffc395; }
